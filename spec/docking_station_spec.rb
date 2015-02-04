@@ -32,4 +32,18 @@ describe DockingStation do
 		fill_station station
 		expect{ station.dock(bike) }.to raise_error(RuntimeError, 'Station is full')
 	end
+
+	it 'should provide the list of avaliable bikes' do
+		working_bike, broken_bike = Bike.new, Bike.new
+		broken_bike.break!
+		station.dock(working_bike)
+		station.dock(broken_bike)
+		expect(station.avaliable_bikes).to eq([working_bike])
+	end
 end
+
+
+
+
+
+
