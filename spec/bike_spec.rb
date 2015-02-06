@@ -19,4 +19,3 @@ describe Bike do
 		expect(bike).not_to be_broken
 	end
 end
-
